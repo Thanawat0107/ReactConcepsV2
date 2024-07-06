@@ -4,8 +4,8 @@ import "./Header.css";
 
 //รับ props มาจาก component App
 //กระจายค่าออกมา title, major
-export default function Header(pros) {
-  const {title, major} = pros;
+export default function Header(props) {
+  const {title, major} = props;
   return (
     <nav>
       <img src={Logo} alt="logo" className="logo" />

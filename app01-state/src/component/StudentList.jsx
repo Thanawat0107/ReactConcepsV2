@@ -1,26 +1,10 @@
 import React from "react";
 import { useState } from "react";
 
-export default function StudenList() {
-  //สร้าง array
-  let students = [];
-
-  //นำมาวนลูป
-  for (let index = 1; index < 6; index++) {
-    let student = {
-      id: index,
-      name: "Coffee" + index,
-    };
-    //เอาข้อมูลที่วนลูปมา Add เข้า students โดยใช้ push
-    students.push(student);
-  }
-  //สร้าง state
-  const [dataStudent, setDataStudent] = useState(students);
+export default function StudenList(props) {
   const [show, setShow] = useState(false);
-  //ฟังก์ชัน deletEStudent
-  const deletEStudent = (id) => {
-    setDataStudent(dataStudent.filter((item) => item.id != id));
-  };
+  const {dataStudent, deletEStudent} = props;
+
   //สร้างฟังก์ชัน table
   const table = () => (
     <table className="table table-hover">
@@ -54,7 +38,7 @@ export default function StudenList() {
     <div>
       <h1>StudentsQuantity({dataStudent.length})</h1>
       <button onClick={() => setShow(!show)}>{show ? "Hiden" : "Show"}</button>
-      {show && table()} 
+      {show && table()}
     </div>
   );
 }
