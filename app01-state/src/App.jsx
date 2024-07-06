@@ -2,16 +2,21 @@ import React from "react";
 import { useState } from "react";
 
 export default function App() {
+  //สร้าง array
   let students = [];
 
+  //นำมาวนลูป
   for (let index = 0; index < 5; index++) {
     let student = {
       id: index,
       name: "Coffee" + index,
     };
+    //เอาข้อมูลที่วนลูปมา Add เข้า students
     students.push(student);
   }
+  //สร้าง state
   const [dataStudent, setDataStudent] = useState(students);
+  //ฟังก์ชัน DeletE
   const deletEStudent = (id) => {
     setDataStudent(dataStudent.filter((item) => item.id != id));
   };
