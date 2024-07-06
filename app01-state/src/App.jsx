@@ -2,27 +2,43 @@ import React from "react";
 import { useState } from "react";
 
 export default function App() {
-  //props
-  const [number, setNumder] = useState(1);
-  //สร้างเป็น ฟังก์ชันเรียกใช้งาน
-  const Add = () => {
-    setNumder(number + 1);
+  let students = [];
+
+  for (let index = 0; index < 5; index++) {
+    let student = {
+      id: index,
+      name: "Coffee" + index,
+    };
+    students.push(student);
+  }
+  const [dataStudent, setDataStudent] = useState(students);
+  const deletEStudent = (id) => {
+    setDataStudent(dataStudent.filter((item) => item.id != id));
   };
-  const DeletE = () => setNumder(number - 1);
-  const Resset = () => setNumder(0);
-  //เรียกใช้ฟังก์ชันจาก const Add,DeletE,Reset
   return (
     <div>
-      <p>{number}</p>
-      <button className="btn" onClick={Add}>
-        Add
-      </button>
-      <button className="btn" onClick={DeletE}>
-        Delete
-      </button>
-      <button className="btn" onClick={Resset}>
-        Resset
-      </button>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {dataStudent.map((item) => (
+            <tr key={item.id}>
+              <th scope="row">{item.id}</th>
+              <th>{item.name}</th>
+              <th>
+                <button onClick={() => deletEStudent(item.id)} type="button" class="btn btn-danger">
+                  Danger
+                </button>
+              </th>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
