@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import Header from './component/Header'
 import StudenList from './component/StudentList'
+import AddForm from './component/AddForm';
 
 export default function App() {
   //สร้าง array
@@ -30,6 +31,7 @@ export default function App() {
   return (
     <div className='container'>
       <Header title="Home" major="Comcience"/>
+      <AddForm dataStudent={dataStudent} setDataStudent={setDataStudent}/>
       <StudenList dataStudent={dataStudent} deletEStudent={deletEStudent}/>
     </div>
   )
