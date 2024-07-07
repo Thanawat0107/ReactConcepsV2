@@ -12,6 +12,7 @@ export default function StudenList(props) {
         <tr>
           <th scope="col">Id</th>
           <th scope="col">Name</th>
+          <th scope="col">Gender</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -20,6 +21,7 @@ export default function StudenList(props) {
           <tr key={item.id}>
             <th scope="row">{item.id}</th>
             <th>{item.name}</th>
+            <th>{item.gender}</th>
             <th>
               <button
                 onClick={() => deletEStudent(item.id)}
