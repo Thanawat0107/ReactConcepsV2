@@ -1,29 +1,16 @@
-import { useEffect, useState, useCallback } from "react";
+import React, { useState  } from "react";
 import "./ProductList.css";
+import useFerch from "../hooks/useFerch";
 
 export default function ProductList() {
-  const [Products, setProducts] = useState();
-  const [Count, setCount] = useState(0);
   const [Url, setUrl] = useState("http://localhost:3000");
-  const fetchUrl = useCallback(() => {
-    fetch(Url)
-      .then((response) => response.json())
-      .then((data) => {
-        setProducts(data);
-        setCount(data.length);
-      })
-      .catch((e) => console.log("Not found"));
-  }, [Url]);
+  const {data: Products} = useFerch(Url);
 
-  useEffect(() => {
-    fetchUrl();
-    console.log("*_*");
-  }, [fetchUrl]);
   return (
     <>
       <div className="product-list">
         <div>
-          <h2>{Count}</h2>
+          <h2>{Products && Products.length}</h2>
           <button className="btn" onClick={()=>setUrl("http://localhost:3000/products")}>Load All</button>
           <button className="btn" onClick={()=>setUrl("http://localhost:3000/products?in_stock=true")}>Load In Stock</button>
         </div>
