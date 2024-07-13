@@ -6,8 +6,7 @@ export default function ProductList() {
   const [Products, setProducts] = useState();
   const [Count, setCount] = useState(0);
   const [Url, setUrl] = useState("http://localhost:3000");
-
-  useEffect(() => {
+  const fetchUrl = () => {
     fetch(Url)
       .then((response) => response.json())
       .then((data) => {
@@ -15,7 +14,12 @@ export default function ProductList() {
         setCount(data.length);
       })
       .catch((e) => console.log("Not found"));
-  }, [Url]);
+  }
+
+  useEffect(() => {
+    fetchUrl()
+    console.log(19);
+  }, [fetchUrl]);
   return (
     <>
       <div className="product-list">
