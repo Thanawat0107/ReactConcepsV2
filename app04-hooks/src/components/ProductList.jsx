@@ -1,12 +1,11 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import "./ProductList.css";
 
 export default function ProductList() {
   const [Products, setProducts] = useState();
   const [Count, setCount] = useState(0);
   const [Url, setUrl] = useState("http://localhost:3000");
-  const fetchUrl = () => {
+  const fetchUrl = useCallback(() => {
     fetch(Url)
       .then((response) => response.json())
       .then((data) => {
@@ -14,11 +13,11 @@ export default function ProductList() {
         setCount(data.length);
       })
       .catch((e) => console.log("Not found"));
-  }
+  }, [Url]);
 
   useEffect(() => {
-    fetchUrl()
-    console.log(19);
+    fetchUrl();
+    console.log("*_*");
   }, [fetchUrl]);
   return (
     <>
