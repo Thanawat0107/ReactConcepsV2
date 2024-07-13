@@ -1,18 +1,29 @@
-import React, { useState  } from "react";
+import React, { useState } from "react";
 import "./ProductList.css";
 import useFerch from "../hooks/useFerch";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 export default function ProductList() {
   const [Url, setUrl] = useState("http://localhost:3000");
-  const {data: Products} = useFerch(Url);
+  const { data: Products, Loading } = useFerch(Url);
+
+  if (Loading)
+    return (
+      <Box sx={{ display: "flex" }}>
+        <CircularProgress />
+      </Box>
+    );
 
   return (
     <>
       <div className="product-list">
         <div>
           <h2>{Products && Products.length}</h2>
-          <button className="btn" onClick={()=>setUrl("http://localhost:3000/products")}>Load All</button>
-          <button className="btn" onClick={()=>setUrl("http://localhost:3000/products?in_stock=true")}>Load In Stock</button>
+          <button className="btn" onClick={() => setUrl("http://localhost:3000/products")}>Load All</button>
+          <button className="btn" onClick={() => setUrl("http://localhost:3000/products?in_stock=true")}>
+            Load In Stock
+          </button>
         </div>
         {Products &&
           Products.map((products) => (
