@@ -1,4 +1,3 @@
-import Header from "./Header";
 import Home from "./Home";
 import footer from "./Footer";
 import ProductList from "./ProductList";
@@ -8,5 +7,7 @@ import Notfound from "./Notfound";
 import ContactEu from "./ContactEu";
 import ContactIn from "./ContactIn";
 import ContactUs from "./ContactUs";
+import MainRoute from "./MainRoute";
 
-export  {Header, Home, footer, ProductList, ProductDetail, Contact, Notfound, ContactEu, ContactIn, ContactUs}
+
+export  {Home, footer, ProductList, ProductDetail, Contact, Notfound, ContactEu, ContactIn, ContactUs, MainRoute }
