@@ -33,7 +33,7 @@ export default function ProductList() {
                 <h2>{products.name}</h2>
                 <p>${products.price}</p>
                 <span className="product-status">
-                  {products.in_stock == "true" ? "In Stock" : "Unvaliable"}
+                  {products.in_stock == true ? "In Stock" : "Unvaliable"}
                 </span>
               </div>
             </div>

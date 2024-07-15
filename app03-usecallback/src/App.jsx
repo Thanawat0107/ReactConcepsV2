@@ -25,13 +25,7 @@ const App = () => {
   return (
     <div className="App">
       <Child returnComment={returnComment} />
-      <button
-        className="btn btn-primary"
-        onClick={() => {
-          setToggle(!toggle);
-          setData("ทดสอบเปลี่ยนค่า - ");
-        }}
-      >
+      <button className="btn btn-primary"onClick={() => {setToggle(!toggle); setData("ทดสอบเปลี่ยนค่า - ");}}>
         Click Toggle
       </button>
       {toggle && <h1> toggle </h1>}
