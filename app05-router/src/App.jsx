@@ -1,14 +1,16 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import {Home, ProductDetail, ProductList} from "./components/";
+import {Home, Header, Contact ,ProductDetail, ProductList} from "./components/";
 
 export default function App() {
   return (
     <>
+      <Header/>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="products" element={<ProductList />}></Route>
-        <Route path="products/1001" element={<ProductDetail />}></Route>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="products" element={<ProductList/>}></Route>
+        <Route path='contact' element={<Contact/>}></Route>
+        <Route path="productdetails/1001" element={<ProductDetail/>}></Route>
       </Routes>
     </>
   )
