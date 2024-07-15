@@ -5,8 +5,7 @@ export default function ProductDetail() {
   const getId = useParams();
   return (
     <div>
-      ProductDetail {getId.id} && <h1>ตูดส่งมา...!!! {getId.id}
-      </h1>
+      ProductDetail {getId.id} && <h1>ตูดส่งมา...!!! {getId.id}</h1>
     </div>
   )
 }
