@@ -19,6 +19,13 @@ const products = [
         image:"assets/product3.jpeg",
         price:1000,
         quantity:1
+    },
+    {
+        id:4,
+        name : "ขวดตะเปียด",
+        image:"assets/product4.jpg",
+        price:20000,
+        quantity:1
     }
 ]
 

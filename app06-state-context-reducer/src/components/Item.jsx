@@ -1,13 +1,16 @@
+import { useCart } from "../context/CartContext";
 import "./Item.css";
 
 export const Item = (props) => {
   const { id, name, price, image, quantity } = props;
+  const {formatMoney} = useCart()
+
   return (
     <div className="card">
       <img src={image} />
       <div className="product">
         <p className="name">ชื่อสินค้า : {name} </p>
-        <p className="price">ราคา : {price} บาท </p>
+        <p className="price">ราคา : {formatMoney(price)} บาท </p>
       </div>
 
       <div className="quantity">
@@ -16,7 +19,7 @@ export const Item = (props) => {
         <button>-</button>
       </div>
 
-      <div className="total-price">{quantity * price}</div>
+      <div className="total-price">{formatMoney(quantity * price)}</div>
       <button>ลบสินค้า</button>
     </div>
   );

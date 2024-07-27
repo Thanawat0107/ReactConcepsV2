@@ -16,9 +16,14 @@ export const CartProvider = ({ children }) => {
   //และ return ค่าที่จะนำไปใช้ต่อสองค่าคือ state และ dispatch
   const [state, dispatch] = useReducer(cartReducer, initState);
 
+  function formatMoney(money){
+    return money.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
+
+
   //กระจายข้อมูลที่จะนำไปใช้งานหรือแชร์ด้วย Context Provider ผ่านคุณสมบัติ value
   return (
-    <CartContext.Provider value={{ ...state }}>
+    <CartContext.Provider value={{ ...state, formatMoney}}>
       {children} {/* คอมโพเนนต์ที่จะทำ value ไปใช้งาน */}
     </CartContext.Provider>
   );
