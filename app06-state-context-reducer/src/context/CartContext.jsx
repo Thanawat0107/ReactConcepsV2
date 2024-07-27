@@ -24,10 +24,23 @@ export const CartProvider = ({ children }) => {
     console.log("คำนวณหาผลรวม")
     dispatch({type:"CALCULATE_TOTAL"})
   },[state.products]);
-  
+
+  function addQuantity(id) {
+    dispatch({ type: "ADD", payload: id });
+  }
+
+  function removeItem(id) {
+    dispatch({ type: "REMOVE", payload: id });
+  }
+
+  function subtractQuantity(id) {
+    dispatch({ type: "SUBTRACT", payload: id });
+  }
+
+
   //กระจายข้อมูลที่จะนำไปใช้งานหรือแชร์ด้วย Context Provider ผ่านคุณสมบัติ value
   return (
-    <CartContext.Provider value={{ ...state, formatMoney }}>
+    <CartContext.Provider value={{ ...state, formatMoney, removeItem, addQuantity, subtractQuantity }}>
       {children} {/* คอมโพเนนต์ที่จะทำ value ไปใช้งาน */}
     </CartContext.Provider>
   );
