@@ -9,5 +9,4 @@ import ContactIn from "./ContactIn";
 import ContactUs from "./ContactUs";
 import MainRoute from "./MainRoute";
 
-
-export  {Home, footer, ProductList, ProductDetail, Contact, Notfound, ContactEu, ContactIn, ContactUs, MainRoute }
+export  { Home, footer, ProductList, ProductDetail, Contact, Notfound, ContactEu, ContactIn, ContactUs, MainRoute }
