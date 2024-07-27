@@ -3,7 +3,7 @@ import "./Item.css";
 
 export const Item = (props) => {
   const { id, name, price, image, quantity } = props;
-  const {formatMoney} = useCart()
+  const {formatMoney} = useCart();
 
   return (
     <div className="card">
