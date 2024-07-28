@@ -14,6 +14,6 @@ export const counterSlice = createSlice({
     },
 });
 
-export const { increment, decrement } = counterSlice.actions //ส่งออก actions หรือ methon
+export const { increment, decrement, incrementByAmount } = counterSlice.actions //ส่งออก actions หรือ methon
 
 export const counterReducer = counterSlice.reducer //ส่งออก state
