@@ -1,3 +1,4 @@
+import React from "react";
 import { useGetAllDestinationQuery } from "../api/destinationApi";
 import { Destination } from './Destination';
 
