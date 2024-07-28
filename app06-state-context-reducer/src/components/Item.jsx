@@ -1,4 +1,7 @@
 import { useCart } from "../context/CartContext";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
+import DeleteIcon from '@mui/icons-material/Delete';
 import "./Item.css";
 
 export const Item = (props) => {
@@ -10,18 +13,18 @@ export const Item = (props) => {
     <div className="card">
       <img src={image} />
       <div className="product">
-        <p className="name">ชื่อสินค้า : {name} </p>
-        <p className="price">ราคา : {formatMoney(price)} บาท </p>
+        <p className="name" style={{fontSize: "1.2vw"}}>ชื่อสินค้า : {name} </p>
+        <p className="price" style={{fontSize: "1.2vw"}}>ราคา : {formatMoney(price)} บาท </p>
       </div>
+
+      <div className="total-price" style={{fontSize: "1.2vw"}}>${formatMoney(quantity * price)}</div>
 
       <div className="quantity">
-        <button onClick={()=>addQuantity(id)}>+</button>
-        <input type="text" value={quantity} disabled />
-        <button onClick={()=>subtractQuantity(id)}>-</button>
+        <button className="addQuantity" onClick={()=>addQuantity(id)}><AddCircleIcon/></button>
+        <input type="text" value={quantity} disabled style={{fontSize: "1.2vw"}} />
+        <button className="subtractQuantity" onClick={()=>subtractQuantity(id)}><RemoveCircleIcon/></button>
       </div>
-
-      <div className="total-price">{formatMoney(quantity * price)}</div>
-      <button onClick={()=>removeItem(id)}>ลบสินค้า</button>
+      <button className="delete_prod" style={{fontSize: "1.2vw"}} onClick={()=>removeItem(id)}><DeleteIcon/></button>
     </div>
   );
 };

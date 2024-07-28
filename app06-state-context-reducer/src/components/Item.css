@@ -26,10 +26,23 @@ input{
     width: 32px;
     font-size: 15px;
 }
-button{
+
+.addQuantity{
     border: none;
-    background: rgb(226, 7, 7);
-    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.subtractQuantity{
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete_prod{
+    border: none;
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;

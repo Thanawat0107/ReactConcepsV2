@@ -6,9 +6,7 @@ export const Cart = () => {
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>
-        {products.length > 0
-          ? `ยอดชำระเงินรวม : ${formatMoney(total)} บาท`
-          : "ไม่มีสินค้าในตะกร้า"}
+        {products.length > 0 ? `ยอดชำระเงินรวม : ${formatMoney(total)} บาท` : "ไม่มีสินค้าในตะกร้า"}
       </h1>
       
       { products.map((data) => <Item key={data.id} {...data} />) }
