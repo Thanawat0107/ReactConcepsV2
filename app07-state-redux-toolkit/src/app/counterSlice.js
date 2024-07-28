@@ -1,10 +1,10 @@
-import {creactSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     value: 0
 }
 
-export const counterSlice = creactSlice({
+export const counterSlice = createSlice({
     name: 'counter',
     initialState: initialState,
     reducer: {
