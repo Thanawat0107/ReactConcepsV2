@@ -5,7 +5,7 @@ export const DestinationList = () => {
 
   let content;
   if (isLoading) {
-    content = <p>Loading...</p>;
+    content = <p style={{color: "while"}}>Loading...</p>;
   } else if (isSuccess) {
     content = data.map((destination) => {
       return (

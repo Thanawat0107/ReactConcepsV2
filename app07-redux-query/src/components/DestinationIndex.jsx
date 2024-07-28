@@ -7,7 +7,6 @@ export const DestinationIndex = () => {
       <h1 className="text-success text-center">Travel List</h1>
       <AddDestination />
       <DestinationList/>
-
     </div>
   );
 };
