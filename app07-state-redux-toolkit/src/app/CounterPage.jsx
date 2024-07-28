@@ -11,7 +11,7 @@ export default function CounterPage() {
       CounterPage "{count}" 
       <button className="btn" onClick={() => disPatch(increment())}> + </button>
       <button className="btn" onClick={() => disPatch(decrement())}> - </button>
-      <button className="btn" onClick={() => disPatch(incrementByAmount(5))}> TWST </button>
+      <button className="btn" onClick={() => disPatch(incrementByAmount(5))}> TWT </button>
       
     </div>
   );
