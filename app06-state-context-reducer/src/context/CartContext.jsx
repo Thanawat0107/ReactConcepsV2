@@ -12,13 +12,17 @@ export const CartProvider = ({ children }) => {
   //และ return ค่าที่จะนำไปใช้ต่อสองค่าคือ state และ dispatch
   const [state, dispatch] = useReducer(cartReducer, initState);
 
+  const addProduct = () => {
+    
+  }
+
   function formatMoney(money) {
     return money.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
   }
 
   useEffect(()=>{
-    console.log("คำนวณหาผลรวม")
-    dispatch({type:"CALCULATE_TOTAL"})
+    console.log("คำนวณหาผลรวม");
+    dispatch({type:"CALCULATE_TOTAL"});
   },[state.products]);
 
   function addQuantity(id) {

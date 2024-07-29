@@ -8,7 +8,6 @@ export const Item = (props) => {
   const { id, name, price, image, quantity } = props;
   const {formatMoney, removeItem, addQuantity, subtractQuantity} = useCart();
   
-
   return (
     <div className="card">
       <img src={image} />
@@ -17,11 +16,10 @@ export const Item = (props) => {
         <p className="price" style={{fontSize: "1.2vw"}}>ราคา : {formatMoney(price)} บาท </p>
       </div>
 
-      <div className="total-price" style={{fontSize: "1.2vw"}}>${formatMoney(quantity * price)}</div>
+      <div className="total-price" style={{fontSize: "1.2vw"}}>${formatMoney(quantity * price)} x {quantity}</div>
 
       <div className="quantity">
         <button className="addQuantity" onClick={()=>addQuantity(id)}><AddCircleIcon/></button>
-        <input type="text" value={quantity} disabled style={{fontSize: "1.2vw"}} />
         <button className="subtractQuantity" onClick={()=>subtractQuantity(id)}><RemoveCircleIcon/></button>
       </div>
       <button className="delete_prod" style={{fontSize: "1.2vw"}} onClick={()=>removeItem(id)}><DeleteIcon/></button>

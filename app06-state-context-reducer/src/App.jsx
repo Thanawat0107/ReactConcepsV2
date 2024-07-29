@@ -1,11 +1,11 @@
-import { Cart } from "./components/Cart";
+import AllRoutes from "./routes/AllRoutes";
 import { Header } from "./components/Header";
 
 export default function App() {
   return (
     <div className="App">
       <Header />
-      <Cart />
+      <AllRoutes />
     </div>
   );
 }
